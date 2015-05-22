@@ -1,0 +1,29 @@
+class Config:
+    GENERAL = {
+        'host': '<host>',
+        'port': <port>,
+        'databases': {
+            'mysql': 'mysqldb://user:password@host/database',
+            'sqlite3': 'sqlite:////path/database.db'
+        },
+    }
+
+    @staticmethod
+    def init_app(app):
+        pass
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
+class StagingConfig(Config):
+    STAGING = True
+
+class ProductionConfig(Config):
+    DEBUG = False
+
+config = {
+    'development': DevelopmentConfig,
+    'staging': StagingConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig
+}
