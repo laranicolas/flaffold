@@ -1,0 +1,6 @@
+.venv
+*.pyc
+
+api/config.py
+
+.Trash-1000
